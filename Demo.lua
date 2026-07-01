@@ -1,26 +1,3 @@
---[[
-	================================================================================
-	 GEMSUI  -  DEMO / TEST SCRIPT
-	 ================================================================================
-	 This LocalScript loads the framework exactly as a user would
-	 (via loadstring + HttpGet from GitHub) and builds all UI elements
-	 exclusively through the public API.
-
-	 Nothing in Framework.lua needs to be changed to build your own UI.
-	 All windows, tabs and elements are created via the API shown here.
-
-	 WHERE TO PUT THIS:
-		StarterPlayer → StarterPlayerScripts → (this script as a LocalScript)
-	 ================================================================================
-]]
-
---================================================================================
--- 1) LOAD FRAMEWORK
---================================================================================
--- Switch for testing:
---   true  → loads the framework from a ModuleScript in ReplicatedStorage
---            (handy for local testing in Roblox Studio, no GitHub needed)
---   false → loads the framework exactly like an executor via loadstring + HttpGet
 local USE_LOCAL_MODULE = true
 
 local Library
@@ -35,21 +12,16 @@ if USE_LOCAL_MODULE then
 	end
 	Library = require(moduleScript)
 else
-	-- Production mode: loads the framework directly from GitHub (raw link).
-	-- IMPORTANT: Replace the URL with your own GitHub raw link after
-	-- uploading Framework.lua to your repository, e.g.:
-	--   https://raw.githubusercontent.com/<YourUser>/<YourRepo>/main/Framework.lua
-	local FRAMEWORK_URL = "https://raw.githubusercontent.com/YOURUSERNAME/YOURREPO/main/Framework.lua"
+
+	local FRAMEWORK_URL = "https://raw.githubusercontent.com/musicmaker-web/GemsUI/refs/heads/main/GemsUI.lua"
 	Library = loadstring(game:HttpGet(FRAMEWORK_URL, true))()
 end
 
 Library:Init()
 
---================================================================================
--- 2) CREATE MAIN WINDOW
---================================================================================
+
 local MainWindow = Library:CreateWindow({
-	Title          = "FrostByte .EXE",
+	Title          = "GEMSUI",
 	SubTitle       = "V1.0 PRIME",
 	Theme          = "Frost",
 	ToggleButton   = true,
