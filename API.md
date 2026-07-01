@@ -41,7 +41,7 @@ This document walks you through every feature step by step.
 
 ```lua
 local Library = loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/<USER>/<REPO>/main/Framework.lua",
+    "https://raw.githubusercontent.com/musicmaker-web/GemsUI/refs/heads/main/GemsUI.lua",
     true
 ))()
 
@@ -729,7 +729,7 @@ A complete, working script that demonstrates the most important features:
 --======================================================
 
 local Library = loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/<USER>/<REPO>/main/Framework.lua",
+    "https://raw.githubusercontent.com/musicmaker-web/GemsUI/refs/heads/main/GemsUI.lua",
     true
 ))()
 
